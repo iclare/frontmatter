@@ -11,7 +11,7 @@ fn parse(toks: &str) -> HashSet<String> {
         static ref RE: Regex = Regex::new(r"\w(-?\w?)*").unwrap();
     }
     RE.find_iter(toks)
-        .map(|tag| String::from(tag.as_str()))
+        .map(|tag| String::from(tag.as_str()).to_lowercase())
         .collect()
 }
 
