@@ -1,9 +1,10 @@
 use std::path::PathBuf;
+
 use structopt::StructOpt;
 
-mod tags;
-
 use tags::extract;
+
+mod tags;
 
 #[derive(StructOpt, Debug)]
 #[structopt(name = "frontmatter")]
@@ -38,7 +39,7 @@ fn main() -> std::io::Result<()> {
             std::process::exit(1);
         }
         let tags = extract(&file);
-        println!("{:?}", tags);
+        // println!("{:?}", tags);
     }
 
     Ok(())
